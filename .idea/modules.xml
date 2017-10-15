@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/genetic.iml" filepath="$PROJECT_DIR$/.idea/modules/genetic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/genetic_main.iml" filepath="$PROJECT_DIR$/.idea/modules/genetic_main.iml" group="genetic" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/genetic_test.iml" filepath="$PROJECT_DIR$/.idea/modules/genetic_test.iml" group="genetic" />
+    </modules>
+  </component>
+</project>
