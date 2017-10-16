@@ -3,8 +3,8 @@ import java.util.Random;
 public class Creature implements Comparable<Creature> {
     byte[] code;
     static float mutationRate = 0.01f;
-    int score;
-    static Random random = new Random(23);
+    double score;
+    static Random random = new Random();
 
     public Creature(byte[] newCode) {
         this.code=newCode;
@@ -20,8 +20,16 @@ public class Creature implements Comparable<Creature> {
     void evaluate(Processor processor,int expectedScore){
         int s=processor.process(code);
         if(s==Integer.MIN_VALUE) score=s;
-        else {score += -Math.abs(expectedScore-s);
+        else {
+            score -= logistic(Math.abs(expectedScore-s));
+
         }
+    }
+
+    double logistic(int x){
+        return Math.tanh(x);
+        //return 1/(1+Math.pow(Math.E,-x));
+
     }
 
     Creature reproduce(Creature c){
@@ -42,6 +50,6 @@ public class Creature implements Comparable<Creature> {
 
     @Override
     public int compareTo(Creature o) {
-        return Integer.compare(score,o.score);
+        return Double.compare(score,o.score);
     }
 }
